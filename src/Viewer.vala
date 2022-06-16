@@ -1,55 +1,31 @@
-using Gtk;
-
-public class App.View.Viewer : He.View {
-
-	public Window.Main window { get; set; }
+[GtkTemplate (ui = "/co/tauos/Modi/viewer.ui")]
+public class Modi.Viewer : He.ViewMono {
+	public MainWindow window { get; set; }
 	public PictureFile? project {
 		get { return canvas.project; }
 		set { canvas.project = value; }
 	}
 
-	protected Stack stack;
-	protected View.Canvas canvas;
-	protected He.EmptyPage empty_state;
+	protected Canvas canvas;
 
-	public class Viewer (Window.Main window) {
+	[GtkChild]
+	unowned Gtk.Stack stack;
+	[GtkChild]
+	unowned He.OverlayButton overlay_button;
+	[GtkChild]
+	unowned Gtk.ScrolledWindow sw;
+
+	public class Viewer (MainWindow? window) {
 		this.window = window;
-		this.window.render.connect (() => {
+		window.render.connect (() => {
 			canvas.queue_draw ();
 		});
 		notify["project"].connect (on_project_changed);
 	}
 	
 	construct {
-		var builder = new Builder ();
-		stack = new Stack ();
-		stack.set_transition_type (StackTransitionType.CROSSFADE);
-		add_css_class ("canvas");
+		canvas = new Canvas ();
 
-		empty_state = new He.EmptyPage () {
-			title = _("No Open Picture"),
-			description = _("Open a picture to start viewing it."),
-			icon = "folder-pictures-symbolic",
-			button = "Open Picture"
-		};
-
-		stack.add_named (empty_state, "empty");
-
-		canvas = new View.Canvas ();
-
-		var scroller = new ScrolledWindow ();
-		scroller.hexpand = true;
-		scroller.vexpand = true;
-		scroller.halign = Align.CENTER;
-		scroller.valign = Align.CENTER;
-		scroller.propagate_natural_height = true;
-		scroller.propagate_natural_width = true;
-		scroller.child = canvas;
-
-		var overlay_button = new He.OverlayButton ("zoom-in-symbolic",null,"zoom-out-symbolic");
-		overlay_button.color = He.Colors.DARK;
-		overlay_button.secondary_color = He.Colors.DARK;
-		overlay_button.child = scroller;
 		overlay_button.clicked.connect (() => {
 			zoom_in ();
 		});
@@ -57,14 +33,7 @@ public class App.View.Viewer : He.View {
 			zoom_out ();
 		});
 
-		stack.add_named (overlay_button, "canvas");
-
-		var window_handle = new WindowHandle ();
-		window_handle.hexpand = true;
-		window_handle.vexpand = true;
-		window_handle.set_child (stack);
-
-		add_child (builder, window_handle, "");
+		sw.child = canvas;
 	}
 
 	void on_project_changed () {

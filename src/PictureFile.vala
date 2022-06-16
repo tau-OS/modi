@@ -1,5 +1,5 @@
-public class App.PictureFile : Object {
-	protected Window.Main? window { get; set; }
+public class Modi.PictureFile : Object {
+	protected MainWindow? window { get; set; }
 	public Gdk.Texture source { get; set; }
 	public File file { get; set; }
 
@@ -7,23 +7,19 @@ public class App.PictureFile : Object {
 		this.file = file;
 	}
 
-	public void load (Window.Main win) {
+	public void load (MainWindow win) {
 		this.source = Gdk.Texture.from_file (file);
 		this.window = win;
 		window.project = this;
-		on_added (window);
-	}
-	public signal void on_added (Window.Main? win) {
-		this.window = win;
 		notify["visible"].connect (() => {
 			this.window.render ();
 		});
 		this.window.render ();
 	}
-	public void start_snapshot (Gtk.Snapshot snapshot, Graphene.Rect bounds, App.View.Canvas canvas) {
+	public void start_snapshot (Gtk.Snapshot snapshot, Graphene.Rect bounds, Canvas canvas) {
 		snapshot.push_debug ("");
 	}
-	public void end_snapshot (Gtk.Snapshot snapshot, Graphene.Rect bounds, App.View.Canvas canvas) {
+	public void end_snapshot (Gtk.Snapshot snapshot, Graphene.Rect bounds, Canvas canvas) {
 		snapshot.pop ();
 	}
 }

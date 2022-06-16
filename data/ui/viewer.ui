@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <template class="ModiViewer" parent="HeViewMono">
+        <child>
+            <object class="GtkWindowHandle">
+                <property name="hexpand">1</property>
+                <property name="vexpand">1</property>
+                <child>
+                    <object class="GtkStack" id="stack">
+                        <child>
+                            <object class="GtkStackPage">
+                                <property name="name">empty</property>
+                                <property name="child">
+                                    <object class="HeEmptyPage">
+                                        <property name="title" translatable="yes">No Open Picture</property>
+                                        <property name="icon">folder-pictures-symbolic</property>
+                                        <property name="description" translatable="yes">Open a picture to start viewing it.</property>
+                                        <property name="button">Open Picture</property>
+                                    </object>
+                                </property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkStackPage">
+                                <property name="name">canvas</property>
+                                <property name="child">
+                                    <object class="HeOverlayButton" id="overlay_button">
+                                        <property name="icon">zoom-in-symbolic</property>
+                                        <property name="secondary-icon">zoom-out-symbolic</property>
+                                        <property name="color">dark</property>
+                                        <property name="secondary-color">dark</property>
+                                        <child>
+                                            <object class="GtkScrolledWindow" id="sw">
+                                                <property name="hexpand">1</property>
+                                                <property name="vexpand">1</property>
+                                                <property name="halign">center</property>
+                                                <property name="valign">center</property>
+                                                <property name="propagate_natural_height">1</property>
+                                                <property name="propagate_natural_width">1</property>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </template>
+</interface>

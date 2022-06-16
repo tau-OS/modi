@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <template class="ModiMainWindow" parent="HeApplicationWindow">
+        <child>
+            <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <child>
+                    <object class="HeAppBar">
+                        <child type="end">
+                            <object class="GtkMenuButton">
+                                <property name="icon-name">open-menu-symbolic</property>
+                                <property name="tooltip_text" translatable="yes">Menu</property>
+                                <property name="menu_model">menu</property>
+                            </object>
+                        </child>
+                        <child type="end">
+                            <object class="GtkButton" id="open_button">
+                                <property name="icon-name">document-open-symbolic</property>
+                                <property name="tooltip_text" translatable="yes">Open Picture…</property>
+                                <signal name="clicked" handler="open_file" />
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkBox" id="main_box">
+                        <property name="orientation">vertical</property> 
+                    </object>
+                </child>
+            </object>
+        </child>
+    </template>
+
+    <menu id="menu">
+        <section>
+            <item>
+                <attribute name="label" translatable="yes">About Modi</attribute>
+                <attribute name="action">app.about</attribute>
+            </item>
+        </section>
+    </menu>
+</interface>

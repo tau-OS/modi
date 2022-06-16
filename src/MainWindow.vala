@@ -1,4 +1,5 @@
-public class App.Window.Main : He.ApplicationWindow {
+[GtkTemplate (ui = "/co/tauos/Modi/window.ui")]
+public class Modi.MainWindow : He.ApplicationWindow {
 	PictureFile? _project;
 
 	public PictureFile? project {
@@ -9,39 +10,21 @@ public class App.Window.Main : He.ApplicationWindow {
 		}
 	}
 
-	protected App.View.Viewer editor;
+	[GtkChild]
+	unowned Gtk.Box main_box;
+
+	protected Viewer editor;
 	public signal void render ();
 
 	construct {
-		var builder = new Gtk.Builder ();
-		editor = new View.Viewer (this);
-		
-		var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-		box.append (editor);
+		editor = new Viewer (this);
 
-		var header = new He.AppBar ();
-		header.flat = true;
+		main_box.append (editor);
 
-		var menu_button = new Gtk.MenuButton () {
-			icon_name = "open-menu-symbolic"
-		};
-		menu_button.add_css_class ("flat");
-		header.add_child (builder, menu_button, "view-button");
-
-		var open_button = new Gtk.Button () {
-			icon_name = "document-open-symbolic"
-		};
-		open_button.clicked.connect (() => {
-			open_file ();
-		});
-		header.add_child (builder, open_button, "view-button");
-
-		this.set_titlebar (header);
-		this.set_child (box);
 		this.show ();
 	}
 	
-	public class Main (He.Application app) {
+	public class MainWindow (He.Application app) {
 		Object (
 			application: app,
 			width_request: 500,
@@ -56,6 +39,7 @@ public class App.Window.Main : He.ApplicationWindow {
 		editor.project = project;
 	}
 
+	[GtkCallback]
 	public void open_file () {
 		var filter = new Gtk.FileFilter () {
 			name = _("Graphic Files")

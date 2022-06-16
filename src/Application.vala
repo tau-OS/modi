@@ -1,6 +1,6 @@
-namespace App {
-	public static Window.Main? main_window;
-	public class Instance : He.Application {
+namespace Modi {
+	public static MainWindow? main_window;
+	public class Application : He.Application {
 
 		construct {
 			application_id = Config.APP_ID;
@@ -9,7 +9,7 @@ namespace App {
 
 		public static int main (string[] args) {
 			Intl.setlocale ();
-			var app = new Instance ();
+			var app = new Application ();
 			return app.run (args);
 		}
 
@@ -19,7 +19,10 @@ namespace App {
 			base.startup ();
 			setup_actions ();
 
-			main_window = new Window.Main (this);
+			typeof (Viewer).ensure ();
+			typeof (PictureFile).ensure ();
+
+			main_window = new MainWindow (this);
 			add_window (main_window);
 		}
 
@@ -45,7 +48,5 @@ namespace App {
 		protected void show_about_dialog () {
 			//  TODO: show about dialog
 		}
-
 	}
-
 }

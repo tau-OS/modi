@@ -1,4 +1,4 @@
-public class App.View.Canvas : Gtk.Box {
+public class Modi.Canvas : Gtk.Box {
 	public PictureFile? project { get; set; }
 	// 1.0 is enough default zoom for most pictures
 	public float scale { get; set; default = 1.0f; }
@@ -36,19 +36,6 @@ public class App.View.Canvas : Gtk.Box {
 		set_size_request (w, h);
 	}
 
-	public void on_visible_rect_changed () {
-		return_if_fail (this != null);
-
-		var rect = Graphene.Rect ();
-
-		var w = this.get_width ();
-		var h = this.get_height ();
-
-		rect.init (0, 0, w, h);
-
-		this.visible_rect = rect;
-	}
-
 	public override void snapshot (Gtk.Snapshot snapshot) {
 		if (project == null) {
 			base.snapshot (snapshot);
@@ -58,6 +45,13 @@ public class App.View.Canvas : Gtk.Box {
 		snapshot.append_texture (project.source, target_rect);
 		project.end_snapshot (snapshot, visible_rect, this);
 
-		on_visible_rect_changed ();
+		var rect = Graphene.Rect ();
+
+		var w = this.get_width ();
+		var h = this.get_height ();
+
+		rect.init (0, 0, w, h);
+
+		this.visible_rect = rect;
 	}
 }
