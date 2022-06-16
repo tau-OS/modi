@@ -1,0 +1,6 @@
+@define-color accent_color #FEBC16;
+@define-color accent_bg_color #FEBC16;
+
+.canvas * {
+  border-radius: 12px;
+}

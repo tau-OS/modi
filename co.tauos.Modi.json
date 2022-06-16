@@ -1,0 +1,43 @@
+{
+    "app-id" : "co.tauos.Modi.Devel",
+    "runtime" : "co.tauos.Platform",
+    "sdk" : "co.tauos.Sdk",
+    "runtime-version" : "daily",
+    "command" : "co.tauos.Modi",
+    "desktop-file-name-suffix" : " (Development)",
+    "finish-args" : [
+        "--device=dri",
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--filesystem=xdg-run/gvfsd",
+        "--filesystem=xdg-pictures"
+    ],
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "*.la",
+        "*.a"
+    ],
+    "modules" : [
+        {
+            "name" : "modi",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Ddevelopment=true"
+            ],
+            "sources" : [
+                {
+                    "type" : "dir",
+                    "path" : "."
+                }
+            ]
+        }
+    ]
+}

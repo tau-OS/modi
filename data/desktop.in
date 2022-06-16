@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Modi
+Comment=Display pictures
+GenericName=Photo Viewer
+Exec=co.tauos.Modi %u
+Icon=co.tauos.Modi
+Terminal=false
+Categories=GNOME;GTK;Photo;Edit;
+Keywords=photo;image;
+X-GNOME-Gettext-Domain=co.tauos.Modi
+X-GNOME-UsesNotifications=true
