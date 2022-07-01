@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+jobs:
+  flatpak:
+    name: "Flatpak"
+    runs-on: ubuntu-latest
+    container:
+      image: bilelmoussaoui/flatpak-github-actions:gnome-40
+      options: --privileged
+    steps:
+    - uses: actions/checkout@v2
+    - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
+      name: "Build"
+      with:
+        bundle: modi.flatpak
+        manifest-path: co.tauos.Modi.json
+        cache-key: flatpak-builder-${{ github.sha }}
+    - uses: bilelmoussaoui/flatpak-github-actions/flat-manager@v3
+      name: "Deploy"
+      with:
+        repository: stable
+        flat-manager-url: https://catalogue.tauos.co
+        token: ${{ secrets.FLATPAK_REPO_TOKEN }}
