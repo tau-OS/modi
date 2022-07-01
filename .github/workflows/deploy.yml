@@ -20,6 +20,8 @@ jobs:
         bundle: modi.flatpak
         manifest-path: co.tauos.Modi.json
         cache-key: flatpak-builder-${{ github.sha }}
+        repository-name: catalogue
+        repository-url: https://repo.tauos.co/catalogue.flatpakrepo
     - uses: bilelmoussaoui/flatpak-github-actions/flat-manager@v3
       name: "Deploy"
       with:
