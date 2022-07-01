@@ -31,9 +31,11 @@ public class Modi.Canvas : Gtk.Box {
 	}
 
 	void update_zoom () {
-		w = (int) (project.source.get_intrinsic_width () * scale);
-		h = (int) (project.source.get_intrinsic_height () * scale);
-		set_size_request (w, h);
+		if (scale > 0.0) {
+			w = (int) (project.source.get_intrinsic_width () * scale);
+			h = (int) (project.source.get_intrinsic_height () * scale);
+			set_size_request (w, h);
+		}
 	}
 
 	public override void snapshot (Gtk.Snapshot snapshot) {

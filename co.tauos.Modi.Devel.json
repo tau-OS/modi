@@ -1,9 +1,10 @@
 {
-    "app-id" : "co.tauos.Modi",
+    "app-id" : "co.tauos.Modi.Devel",
     "runtime" : "co.tauos.Platform",
     "sdk" : "co.tauos.Sdk",
-    "runtime-version" : "stable",
+    "runtime-version" : "daily",
     "command" : "co.tauos.Modi",
+    "desktop-file-name-suffix" : " (Development)",
     "finish-args" : [
         "--device=dri",
         "--share=ipc",
@@ -28,6 +29,9 @@
             "name" : "modi",
             "builddir" : true,
             "buildsystem" : "meson",
+            "config-opts" : [
+                "-Ddevelopment=true"
+            ],
             "sources" : [
                 {
                     "type" : "dir",

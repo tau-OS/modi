@@ -42,7 +42,7 @@ public class Modi.MainWindow : He.ApplicationWindow {
 	[GtkCallback]
 	public void open_file () {
 		var filter = new Gtk.FileFilter () {
-			name = _("Graphic Files")
+			name = _("Pictures")
 		};
 		filter.add_pixbuf_formats ();
 

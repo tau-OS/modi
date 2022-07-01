@@ -8,7 +8,7 @@ i18n = import('i18n')
 
 if get_option('development')
   app_id = 'co.tauos.Modi.Devel'
-  name_suffix = ' (Development)'
+  name_suffix = ' (Nightly)'
 else
   app_id = 'co.tauos.Modi'
   name_suffix = ''

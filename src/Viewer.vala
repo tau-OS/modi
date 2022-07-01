@@ -9,11 +9,13 @@ public class Modi.Viewer : He.ViewMono {
 	protected Canvas canvas;
 
 	[GtkChild]
-	unowned Gtk.Stack stack;
+	new unowned Gtk.Stack stack;
 	[GtkChild]
 	unowned He.OverlayButton overlay_button;
 	[GtkChild]
 	unowned Gtk.ScrolledWindow sw;
+	[GtkChild]
+	unowned He.EmptyPage empty_page;
 
 	public class Viewer (MainWindow? window) {
 		this.window = window;
@@ -34,6 +36,10 @@ public class Modi.Viewer : He.ViewMono {
 		});
 
 		sw.child = canvas;
+
+		empty_page.action_button.clicked.connect(() => {
+			window.open_file ();
+		});
 	}
 
 	void on_project_changed () {
@@ -52,10 +58,10 @@ public class Modi.Viewer : He.ViewMono {
 	}
 
 	public void zoom_out () {
-		if (canvas.scale == float.parse("0.0")) {
-			return;
-		} else {
+		if (canvas.scale >= 0.0) {
 			canvas.scale -= float.parse("0.1");
+		} else {
+			canvas.scale = float.parse("0.1");
 		}
 	}
 }

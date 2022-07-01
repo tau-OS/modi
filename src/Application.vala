@@ -2,15 +2,16 @@ namespace Modi {
 	public static MainWindow? main_window;
 	public class Application : He.Application {
 
-		construct {
-			application_id = Config.APP_ID;
-			flags = ApplicationFlags.HANDLES_OPEN;
-		}
-
 		public static int main (string[] args) {
 			Intl.setlocale ();
-			var app = new Application ();
+			var app = new Application (Config.APP_ID, ApplicationFlags.HANDLES_OPEN);
 			return app.run (args);
+		}
+
+		public Application (string? application_id, ApplicationFlags flags) {
+			this.application_id = application_id;
+			this.flags = flags;
+			base (application_id, flags);
 		}
 
 		protected override void startup () {
@@ -42,11 +43,25 @@ namespace Modi {
 			});
 
 			add_action (about_action);
-			set_accels_for_action ("app.about", { "F1" });
 		}
 
 		protected void show_about_dialog () {
-			//  TODO: show about dialog
+			var about = new He.AboutWindow (
+				main_window,
+				"Modi" + Config.NAME_SUFFIX,
+				Config.APP_ID,
+				Config.VERSION,
+				Config.APP_ID,
+				"https://github.com/tau-OS/modi/tree/main/po",
+				"https://github.com/tau-OS/modi/issues",
+				"catalogue://co.tauos.Modi",
+				{},
+				{"Lains", "Lea"},
+				2022,
+				He.AboutWindow.Licenses.GPLv3,
+				He.Colors.YELLOW
+			);
+			about.present ();
 		}
 	}
 }

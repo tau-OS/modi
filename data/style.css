@@ -1,6 +1,8 @@
-@define-color accent_color #FEBC16;
-@define-color accent_bg_color #FEBC16;
+@define-color accent_color #E0A101;
+@define-color accent_bg_color #E0A101;
 
-.canvas * {
-  border-radius: 12px;
+.editor-bg {
+    margin: 0;
+    padding: 0;
+    background: #6A6A6A;
 }
