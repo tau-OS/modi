@@ -1,8 +1,5 @@
-@define-color accent_color #E0A101;
-@define-color accent_bg_color #E0A101;
-
 .editor-bg {
-    margin: 0;
-    padding: 0;
-    background: #6A6A6A;
+  margin: 0;
+  padding: 0;
+  background: #6a6a6a;
 }

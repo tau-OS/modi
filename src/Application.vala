@@ -15,6 +15,10 @@ namespace Modi {
 		}
 
 		protected override void startup () {
+			Gdk.RGBA accent_color = { 0 };
+			accent_color.parse("#E0A101");
+			default_accent_color = He.Color.from_gdk_rgba(accent_color);
+
 			resource_base_path = "/co/tauos/Modi";
 
 			base.startup ();
