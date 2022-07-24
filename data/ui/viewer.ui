@@ -28,8 +28,6 @@
                                     <object class="HeOverlayButton" id="overlay_button">
                                         <property name="icon">zoom-in-symbolic</property>
                                         <property name="secondary-icon">zoom-out-symbolic</property>
-                                        <property name="color">dark</property>
-                                        <property name="secondary-color">dark</property>
                                         <child>
                                             <object class="GtkScrolledWindow" id="sw">
                                                 <property name="hexpand">1</property>
