@@ -41,8 +41,8 @@ public class Modi.Canvas : Gtk.Box {
 		}
 		project.start_snapshot (snapshot, visible_rect, this);
 		snapshot.append_texture (project.source, target_rect);
-		var w = (int) (project.source.get_intrinsic_width () * scale);
-		var h = (int) (project.source.get_intrinsic_height () * scale);
+		var w = (int) (project.source.get_intrinsic_width ());
+		var h = (int) (project.source.get_intrinsic_height ());
 
 		var point = Graphene.Point ();
 
