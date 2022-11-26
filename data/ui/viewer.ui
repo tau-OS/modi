@@ -2,6 +2,7 @@
 <interface>
     <template class="ModiViewer" parent="HeViewMono">
         <property name="vexpand">1</property>
+        <property name="has-margins">0</property>
         <child>
             <object class="GtkWindowHandle">
                 <property name="hexpand">1</property>
@@ -28,10 +29,10 @@
                                     <object class="HeOverlayButton" id="overlay_button">
                                         <property name="icon">zoom-in-symbolic</property>
                                         <property name="secondary-icon">zoom-out-symbolic</property>
+                                        <property name="hexpand">1</property>
+                                        <property name="vexpand">1</property>
                                         <child>
                                             <object class="GtkScrolledWindow" id="sw">
-                                                <property name="hexpand">1</property>
-                                                <property name="vexpand">1</property>
                                                 <property name="halign">center</property>
                                                 <property name="valign">center</property>
                                                 <property name="propagate_natural_height">1</property>

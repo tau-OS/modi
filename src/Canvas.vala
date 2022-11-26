@@ -1,7 +1,7 @@
 public class Modi.Canvas : Gtk.Box {
 	public PictureFile? project { get; set; }
-	// 1.0 is enough default zoom for most pictures
-	public float scale { get; set; default = 1.0f; }
+	// 0.5 is enough default zoom for most pictures
+	public float scale { get; set; default = 0.5f; }
 	public int w = 0;
 	public int h = 0;
 
@@ -24,10 +24,6 @@ public class Modi.Canvas : Gtk.Box {
 		notify["project"].connect (update_zoom);
 		notify["scale"].connect (update_zoom);
 		notify["visible-rect"].connect (() => queue_draw ());
-		hexpand = false;
-		vexpand = false;
-		halign = Gtk.Align.START;
-		valign = Gtk.Align.START;
 	}
 
 	void update_zoom () {
@@ -45,15 +41,22 @@ public class Modi.Canvas : Gtk.Box {
 		}
 		project.start_snapshot (snapshot, visible_rect, this);
 		snapshot.append_texture (project.source, target_rect);
+		var w = (int) (project.source.get_intrinsic_width () * scale);
+		var h = (int) (project.source.get_intrinsic_height () * scale);
+
+		var point = Graphene.Point ();
+
+		snapshot.translate (point.init (
+			(w / 2),
+			(h / 2)
+		));
+
+		snapshot.scale (scale, scale);
+
+		snapshot.scale(
+			(project.source.get_intrinsic_width () / w),
+			(project.source.get_intrinsic_height () / h)
+		);
 		project.end_snapshot (snapshot, visible_rect, this);
-
-		var rect = Graphene.Rect ();
-
-		var w = this.get_width ();
-		var h = this.get_height ();
-
-		rect.init (0, 0, w, h);
-
-		this.visible_rect = rect;
 	}
 }
