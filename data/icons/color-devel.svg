@@ -1,6 +1,6 @@
 <svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_ii_321_72)">
-<rect x="33.1479" y="-2.75439" width="104" height="104" rx="24" transform="rotate(20.1949 33.1479 -2.75439)" fill="#FFF6E1"/>
+<rect x="33.1479" y="-2.75439" width="104" height="104" rx="24" transform="rotate(20.1949 33.1479 -2.75439)" fill="#E6D8B8"/>
 <rect x="33.1479" y="-2.75439" width="104" height="104" rx="24" transform="rotate(20.1949 33.1479 -2.75439)" fill="url(#paint0_linear_321_72)"/>
 </g>
 <g filter="url(#filter1_dii_321_72)">
@@ -116,7 +116,7 @@
 <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"/>
 <feBlend mode="normal" in2="effect1_innerShadow_321_72" result="effect2_innerShadow_321_72"/>
 </filter>
-<linearGradient id="paint0_linear_321_72" x1="85.148" y1="-2.75439" x2="85.148" y2="101.246" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_321_72" x1="46.5329" y1="-7.93944" x2="86.9932" y2="109.301" gradientUnits="userSpaceOnUse">
 <stop stop-color="#2D2D2D" stop-opacity="0"/>
 <stop offset="1" stop-color="#2D2D2D" stop-opacity="0.2"/>
 </linearGradient>
