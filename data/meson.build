@@ -8,7 +8,7 @@ install_data(
     rename: meson.project_name() + '.svg'
 )
 install_data(
-    join_paths('icons', 'color-devel.svg'),
+    join_paths('icons', 'color.svg'),
     install_dir: scalable_dir,
     rename: meson.project_name() + '.Devel.svg'
 )
