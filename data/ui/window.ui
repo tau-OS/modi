@@ -16,6 +16,7 @@
                                         <property name="icon-name">open-menu-symbolic</property>
                                         <property name="tooltip_text" translatable="yes">Menu</property>
                                         <property name="menu_model">menu</property>
+                                        <property name="valign">center</property>
                                         <style>
                                             <class name="disclosure-button" />
                                         </style>
@@ -26,6 +27,8 @@
                                         <property name="icon-name">document-open-symbolic</property>
                                         <property name="tooltip_text" translatable="yes">Open Picture…</property>
                                         <signal name="clicked" handler="open_file" />
+                                        <property name="valign">center</property>
+                                        <property name="margin-end">6</property>
                                         <style>
                                             <class name="disclosure-button" />
                                         </style>

@@ -8,13 +8,17 @@ public class Modi.PictureFile : Object {
 	}
 
 	public void load (MainWindow win) {
-		this.source = Gdk.Texture.from_file (file);
-		this.window = win;
-		window.project = this;
-		notify["visible"].connect (() => {
+		try{
+			this.source = Gdk.Texture.from_file (file);
+			this.window = win;
+			window.project = this;
+			notify["visible"].connect (() => {
+				this.window.render ();
+			});
 			this.window.render ();
-		});
-		this.window.render ();
+		} catch (Error e) {
+			//
+		}
 	}
 	public void start_snapshot (Gtk.Snapshot snapshot, Graphene.Rect bounds, Canvas canvas) {
 		snapshot.push_debug ("");
