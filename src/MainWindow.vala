@@ -12,6 +12,8 @@ public class Modi.MainWindow : He.ApplicationWindow {
 
 	[GtkChild]
 	unowned Gtk.Box main_box;
+	[GtkChild]
+	unowned He.AppBar main_bar;
 
 	protected Viewer editor;
 	public signal void render ();
@@ -27,8 +29,10 @@ public class Modi.MainWindow : He.ApplicationWindow {
 	public class MainWindow (He.Application app) {
 		Object (
 			application: app,
-			width_request: 500,
-			height_request: 500
+			default_width: 800,
+			default_height: 600,
+			width_request: 360,
+			height_request: 360
 		);
 		
 		present ();
@@ -53,6 +57,7 @@ public class Modi.MainWindow : He.ApplicationWindow {
 				case -3:
 					var selected_file = chooser.get_file ();
 					load_project (selected_file);
+					main_bar.add_css_class ("scrim");
 					break;
 			}
 			chooser.unref ();

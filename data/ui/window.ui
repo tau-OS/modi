@@ -5,28 +5,39 @@
             <object class="GtkBox">
                 <property name="orientation">vertical</property>
                 <child>
-                    <object class="HeAppBar">
-                        <property name="show-back">0</property>
-                        <property name="flat">1</property>
-                        <child type="end">
-                            <object class="GtkMenuButton">
-                                <property name="icon-name">open-menu-symbolic</property>
-                                <property name="tooltip_text" translatable="yes">Menu</property>
-                                <property name="menu_model">menu</property>
+                    <object class="GtkOverlay">
+                        <child type="overlay">
+                            <object class="HeAppBar" id="main_bar">
+                                <property name="show-back">0</property>
+                                <property name="flat">1</property>
+                                <property name="valign">start</property>
+                                <child type="end">
+                                    <object class="GtkMenuButton">
+                                        <property name="icon-name">open-menu-symbolic</property>
+                                        <property name="tooltip_text" translatable="yes">Menu</property>
+                                        <property name="menu_model">menu</property>
+                                        <style>
+                                            <class name="disclosure-button" />
+                                        </style>
+                                    </object>
+                                </child>
+                                <child type="end">
+                                    <object class="GtkButton" id="open_button">
+                                        <property name="icon-name">document-open-symbolic</property>
+                                        <property name="tooltip_text" translatable="yes">Open Picture…</property>
+                                        <signal name="clicked" handler="open_file" />
+                                        <style>
+                                            <class name="disclosure-button" />
+                                        </style>
+                                    </object>
+                                </child>
                             </object>
                         </child>
-                        <child type="end">
-                            <object class="GtkButton" id="open_button">
-                                <property name="icon-name">document-open-symbolic</property>
-                                <property name="tooltip_text" translatable="yes">Open Picture…</property>
-                                <signal name="clicked" handler="open_file" />
+                        <child>
+                            <object class="GtkBox" id="main_box">
+                                <property name="orientation">vertical</property>
                             </object>
                         </child>
-                    </object>
-                </child>
-                <child>
-                    <object class="GtkBox" id="main_box">
-                        <property name="orientation">vertical</property> 
                     </object>
                 </child>
             </object>

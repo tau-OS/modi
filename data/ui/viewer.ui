@@ -9,6 +9,7 @@
                 <property name="vexpand">1</property>
                 <child>
                     <object class="GtkStack" id="stack">
+                        <property name="margin-top">47</property>
                         <child>
                             <object class="GtkStackPage">
                                 <property name="name">empty</property>
@@ -37,6 +38,9 @@
                                                 <property name="valign">center</property>
                                                 <property name="propagate_natural_height">1</property>
                                                 <property name="propagate_natural_width">1</property>
+                                                <style>
+                                                    <class name="viewer" />
+                                                </style>
                                             </object>
                                         </child>
                                     </object>
