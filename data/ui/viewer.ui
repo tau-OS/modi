@@ -3,7 +3,7 @@
     <template class="ModiViewer" parent="HeViewMono">
         <property name="vexpand">1</property>
         <property name="has-margins">0</property>
-        <property name="margin-top">47</property>
+        <property name="margin-top">45</property>
         <child>
             <object class="GtkWindowHandle">
                 <property name="hexpand">1</property>
