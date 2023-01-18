@@ -59,7 +59,7 @@ public class Modi.MainWindow : He.ApplicationWindow {
 					load_project (selected_file);
 					main_bar.add_css_class ("scrim");
 					this.add_css_class ("editor-bg");
-					editor.title = selected_file.get_basename ();
+					main_bar.viewtitle_label = selected_file.get_basename ();
 					break;
 			}
 			chooser.unref ();

@@ -11,27 +11,18 @@
                                 <property name="show-back">0</property>
                                 <property name="flat">1</property>
                                 <property name="valign">start</property>
-                                <child type="end">
+                                <child>
                                     <object class="GtkMenuButton">
                                         <property name="icon-name">open-menu-symbolic</property>
                                         <property name="tooltip_text" translatable="yes">Menu</property>
                                         <property name="menu_model">menu</property>
-                                        <property name="valign">center</property>
-                                        <style>
-                                            <class name="disclosure-button" />
-                                        </style>
                                     </object>
                                 </child>
-                                <child type="end">
+                                <child>
                                     <object class="GtkButton" id="open_button">
                                         <property name="icon-name">document-open-symbolic</property>
                                         <property name="tooltip_text" translatable="yes">Open Picture…</property>
                                         <signal name="clicked" handler="open_file" />
-                                        <property name="valign">center</property>
-                                        <property name="margin-end">6</property>
-                                        <style>
-                                            <class name="disclosure-button" />
-                                        </style>
                                     </object>
                                 </child>
                             </object>
