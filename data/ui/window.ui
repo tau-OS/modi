@@ -9,12 +9,10 @@
                         <child type="overlay">
                             <object class="HeAppBar" id="main_bar">
                                 <property name="show-back">0</property>
-                                <property name="flat">1</property>
                                 <property name="valign">start</property>
                                 <child>
                                     <object class="GtkMenuButton">
                                         <property name="icon-name">open-menu-symbolic</property>
-                                        <property name="tooltip_text" translatable="yes">Menu</property>
                                         <property name="menu_model">menu</property>
                                     </object>
                                 </child>
@@ -37,7 +35,6 @@
             </object>
         </child>
     </template>
-
     <menu id="menu">
         <section>
             <item>
