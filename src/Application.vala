@@ -1,7 +1,6 @@
 namespace Modi {
 	public static MainWindow? main_window;
 	public class Application : He.Application {
-
 		public static int main (string[] args) {
 			Intl.setlocale ();
 			var app = new Application (Config.APP_ID, ApplicationFlags.HANDLES_OPEN);
@@ -9,35 +8,45 @@ namespace Modi {
 		}
 
 		public Application (string? application_id, ApplicationFlags flags) {
+			base (application_id, flags);
 			this.application_id = application_id;
 			this.flags = flags;
-			base (application_id, flags);
 		}
 
 		protected override void startup () {
+			base.startup ();
+
 			Gdk.RGBA accent_color = { 0 };
 			accent_color.parse("#E0A101");
 			default_accent_color = He.Color.from_gdk_rgba(accent_color);
 
 			resource_base_path = "/co/tauos/Modi";
-
-			base.startup ();
 			setup_actions ();
 
 			typeof (Viewer).ensure ();
 			typeof (PictureFile).ensure ();
-
-			main_window = new MainWindow (this);
-			add_window (main_window);
 		}
 
 		protected override void activate () {
-			base.activate ();
+			var window = get_last_window ();
+			if (window == null) {
+				window = new MainWindow (this);
+				window.show ();
+			} else {
+				window.present ();
+			}
 		}
 
 		public override void open (File[] files, string hint) {
 			base.open (files, hint);
-			main_window.load_project (files[0]);
+			var window = get_last_window ();
+			if (window == null) {
+				window = new MainWindow (this);
+				window.load_project(files[0]);
+				window.show ();
+			} else {
+				window.present ();
+			}
 		}
 
 		protected void setup_actions () {
@@ -66,6 +75,11 @@ namespace Modi {
 				He.Colors.YELLOW
 			);
 			about.present ();
+		}
+
+		public MainWindow? get_last_window () {
+			unowned List<Gtk.Window> windows = get_windows ();
+			return windows.length () > 0 ? windows.last ().data as MainWindow : null;
 		}
 	}
 }

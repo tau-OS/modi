@@ -57,9 +57,6 @@ public class Modi.MainWindow : He.ApplicationWindow {
 				case -3:
 					var selected_file = chooser.get_file ();
 					load_project (selected_file);
-					main_bar.add_css_class ("scrim");
-					this.add_css_class ("editor-bg");
-					main_bar.viewtitle_label = selected_file.get_basename ();
 					break;
 			}
 			chooser.unref ();
@@ -70,5 +67,8 @@ public class Modi.MainWindow : He.ApplicationWindow {
 
 	public void load_project (GLib.File? file) {
 		new PictureFile (file).load (this);
+		main_bar.add_css_class ("scrim");
+		this.add_css_class ("editor-bg");
+		main_bar.viewtitle_label = selected_file.get_basename ();
 	}
 }
