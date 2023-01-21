@@ -55,8 +55,7 @@ public class Modi.MainWindow : He.ApplicationWindow {
 		chooser.response.connect (id => {
 			switch (id) {
 				case -3:
-					var selected_file = chooser.get_file ();
-					load_project (selected_file);
+					load_project (chooser.get_file ());
 					break;
 			}
 			chooser.unref ();

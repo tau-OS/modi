@@ -14,8 +14,6 @@ namespace Modi {
 		}
 
 		protected override void startup () {
-			base.startup ();
-
 			Gdk.RGBA accent_color = { 0 };
 			accent_color.parse("#E0A101");
 			default_accent_color = He.Color.from_gdk_rgba(accent_color);
@@ -25,6 +23,7 @@ namespace Modi {
 
 			typeof (Viewer).ensure ();
 			typeof (PictureFile).ensure ();
+			base.startup ();
 		}
 
 		protected override void activate () {
@@ -35,6 +34,7 @@ namespace Modi {
 			} else {
 				window.present ();
 			}
+			base.activate ();
 		}
 
 		public override void open (File[] files, string hint) {
