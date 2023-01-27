@@ -60,7 +60,7 @@ namespace Modi {
 
 		protected void show_about_dialog () {
 			var about = new He.AboutWindow (
-				main_window,
+				get_last_window (),
 				"Modi" + Config.NAME_SUFFIX,
 				Config.APP_ID,
 				Config.VERSION,
