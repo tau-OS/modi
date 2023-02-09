@@ -28,6 +28,9 @@ public class Modi.Viewer : He.ViewMono {
 	construct {
 		canvas = new Canvas ();
 
+		overlay_button.typeb = He.OverlayButton.TypeButton.PRIMARY;
+		overlay_button.typeb2 = He.OverlayButton.TypeButton.SECONDARY;
+
 		overlay_button.clicked.connect (() => {
 			zoom_in ();
 		});
