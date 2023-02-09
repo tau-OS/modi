@@ -69,7 +69,7 @@ namespace Modi {
 				"https://github.com/tau-OS/modi/issues",
 				"catalogue://co.tauos.Modi",
 				{},
-				{"Lains", "Lea"},
+				{"Fyra Labs"},
 				2022,
 				He.AboutWindow.Licenses.GPLv3,
 				He.Colors.YELLOW
