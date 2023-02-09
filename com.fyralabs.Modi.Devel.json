@@ -1,17 +1,15 @@
 {
-    "app-id" : "co.tauos.Modi.Devel",
-    "runtime" : "co.tauos.Platform",
-    "sdk" : "co.tauos.Sdk",
-    "runtime-version" : "daily",
-    "command" : "co.tauos.Modi",
+    "app-id" : "com.fyralabs.Modi.Devel",
+    "runtime" : "com.fyralabs.Sdk",
+    "sdk" : "com.fyralabs.Sdk",
+    "runtime-version" : "stable",
+    "command" : "com.fyralabs.Modi",
     "desktop-file-name-suffix" : " (Development)",
     "finish-args" : [
         "--device=dri",
         "--share=ipc",
         "--socket=fallback-x11",
-        "--socket=wayland",
-        "--filesystem=xdg-run/gvfsd",
-        "--filesystem=xdg-pictures"
+        "--socket=wayland"
     ],
     "cleanup" : [
         "/include",
@@ -39,5 +37,8 @@
                 }
             ]
         }
-    ]
+    ],
+    "build-options" : {
+        "env" : {        }
+    }
 }

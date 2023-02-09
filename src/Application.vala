@@ -18,7 +18,7 @@ namespace Modi {
 			accent_color.parse("#E0A101");
 			default_accent_color = He.Color.from_gdk_rgba(accent_color);
 
-			resource_base_path = "/co/tauos/Modi";
+			resource_base_path = "/com/fyralabs/Modi";
 			setup_actions ();
 
 			typeof (Viewer).ensure ();
@@ -67,7 +67,7 @@ namespace Modi {
 				Config.APP_ID,
 				"https://github.com/tau-OS/modi/tree/main/po",
 				"https://github.com/tau-OS/modi/issues",
-				"catalogue://co.tauos.Modi",
+				"catalogue://com.fyralabs.Modi",
 				{},
 				{"Fyra Labs"},
 				2022,

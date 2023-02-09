@@ -1,4 +1,4 @@
-[GtkTemplate (ui = "/co/tauos/Modi/viewer.ui")]
+[GtkTemplate (ui = "/com/fyralabs/Modi/viewer.ui")]
 public class Modi.Viewer : He.ViewMono {
 	public MainWindow window { get; set; }
 	public PictureFile? project {

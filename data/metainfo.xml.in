@@ -9,7 +9,7 @@
         <p>Display pictures in a simple way.</p>
     </description>
     <provides>
-        <binary>co.tauos.Modi</binary>
+        <binary>com.fyralabs.Modi</binary>
     </provides>
     <kudos>
       <kudo>ModernToolkit</kudo>
@@ -19,7 +19,7 @@
     <url type="homepage">https://github.com/tau-OS/modi/</url>
     <url type="bugtracker">https://github.com/tau-OS/modi/issues</url>
     <url type="translate">https://github.com/tau-OS/modi/blob/main/po/README.md</url>
-    <launchable type="desktop-id">co.tauos.Modi.desktop</launchable>
+    <launchable type="desktop-id">com.fyralabs.Modi.desktop</launchable>
     <screenshots>
         <screenshot type="default">
             <image>https://raw.githubusercontent.com/tau-OS/modi/main/data/shot.png</image>

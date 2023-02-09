@@ -35,14 +35,14 @@ $ ninja test
 For debug messages on the GUI application, set the `G_MESSAGES_DEBUG` environment variable, e.g. to `all`:
 
 ```bash
-G_MESSAGES_DEBUG=all ./src/co.tauos.Modi
+G_MESSAGES_DEBUG=all ./src/com.fyralabs.Modi
 ```
 
 ## 📦 Installing
 
-To install, use `ninja install`, then execute with `co.tauos.Modi`.
+To install, use `ninja install`, then execute with `com.fyralabs.Modi`.
 
 ```bash
 $ sudo ninja install
-$ co.tauos.Modi
+$ com.fyralabs.Modi
 ```

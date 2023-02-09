@@ -1,4 +1,4 @@
-[GtkTemplate (ui = "/co/tauos/Modi/window.ui")]
+[GtkTemplate (ui = "/com/fyralabs/Modi/window.ui")]
 public class Modi.MainWindow : He.ApplicationWindow {
 	PictureFile? _project;
 

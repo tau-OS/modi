@@ -1,4 +1,4 @@
-project('co.tauos.Modi',
+project('com.fyralabs.Modi',
         'vala', 'c',
         version: '0.1.0'
 )
@@ -7,10 +7,10 @@ gnome = import('gnome')
 i18n = import('i18n')
 
 if get_option('development')
-  app_id = 'co.tauos.Modi.Devel'
+  app_id = 'com.fyralabs.Modi.Devel'
   name_suffix = ' (Nightly)'
 else
-  app_id = 'co.tauos.Modi'
+  app_id = 'com.fyralabs.Modi'
   name_suffix = ''
 endif
 

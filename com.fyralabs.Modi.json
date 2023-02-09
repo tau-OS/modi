@@ -1,10 +1,9 @@
 {
-    "app-id" : "co.tauos.Modi.Devel",
-    "runtime" : "co.tauos.Sdk",
-    "sdk" : "co.tauos.Sdk",
+    "app-id" : "com.fyralabs.Modi",
+    "runtime" : "com.fyralabs.Platform",
+    "sdk" : "com.fyralabs.Sdk",
     "runtime-version" : "stable",
-    "command" : "co.tauos.Modi",
-    "desktop-file-name-suffix" : " (Development)",
+    "command" : "com.fyralabs.Modi",
     "finish-args" : [
         "--device=dri",
         "--share=ipc",
@@ -27,9 +26,6 @@
             "name" : "modi",
             "builddir" : true,
             "buildsystem" : "meson",
-            "config-opts" : [
-                "-Ddevelopment=true"
-            ],
             "sources" : [
                 {
                     "type" : "dir",
@@ -37,8 +33,5 @@
                 }
             ]
         }
-    ],
-    "build-options" : {
-        "env" : {        }
-    }
+    ]
 }
