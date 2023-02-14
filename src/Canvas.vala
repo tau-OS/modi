@@ -1,7 +1,7 @@
 public class Modi.Canvas : Gtk.Box {
 	public PictureFile? project { get; set; }
 	// 0.5 is enough default zoom for most pictures
-	public float scale { get; set; default = 0.5f; }
+	public float scale { get; set; default = 0.50f; }
 	public int w = 0;
 	public int h = 0;
 
@@ -46,17 +46,26 @@ public class Modi.Canvas : Gtk.Box {
 
 		var point = Graphene.Point ();
 
+		snapshot.save();
+
 		snapshot.translate (point.init (
 			(w / 2),
 			(h / 2)
 		));
 
+		var point2 = Graphene.Point ();
+
+		var x = Math.fmax((w - project.source.get_intrinsic_width ()) / 2.0, 0.0);
+		var y = Math.fmax((h - project.source.get_intrinsic_height ()) / 2.0, 0.0);
+
+		snapshot.translate (point2.init (
+			(float)Math.round(x),
+			(float)Math.round(y)
+		));
+
 		snapshot.scale (scale, scale);
 
-		snapshot.scale(
-			(project.source.get_intrinsic_width () / w),
-			(project.source.get_intrinsic_height () / h)
-		);
+		snapshot.restore ();
 		project.end_snapshot (snapshot, visible_rect, this);
 	}
 }

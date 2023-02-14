@@ -1,12 +1,179 @@
 .editor-bg {
   margin: 0;
   padding: 0;
-  background: #888;
+  background-color: #7f7f7f;
+  background-image: linear-gradient(
+	  45deg,
+	  #cccccc 25%,
+	  transparent 25%
+  ),
+  linear-gradient(
+	  -45deg,
+	  #cccccc 25%,
+	  transparent 25%
+  ),
+  linear-gradient(
+	  45deg,
+	  transparent 75%,
+	  #cccccc 75%
+  ),
+  linear-gradient(
+  	-45deg,
+	  transparent 75%,
+	  #cccccc 75%
+  );
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
 }
-.viewer {
-  border: 1px solid @borders;
-}
+
 .scrim {
   padding: 0;
   margin: 0;
+  background: none;
+}
+
+.scrim .disclosure-button {
+  background: image(@osd_bg_color);
+  box-shadow: 0 2px 6px 2px rgba(0,0,0, 0.15),
+              0 1px 2px 0   rgba(0,0,0, 0.3);
+  color: @osd_fg_color;
+}
+.scrim .disclosure-button:hover {
+  background: linear-gradient(0deg, alpha(@accent_bg_color, 0.05), alpha(@accent_bg_color, 0.05)), image(@osd_bg_color);
+}
+.scrim .disclosure-button:active,
+.scrim .disclosure-button:checked,
+.scrim .disclosure-button:active:checked {
+  background: image(@osd_accent_color);
+  color: @osd_bg_color;
+}
+.scrim .disclosure-button button:active,
+.scrim .disclosure-button button:checked,
+.scrim .disclosure-button button:active:checked {
+  background: image(@osd_accent_color);
+  color: @osd_bg_color;
+}
+.scrim .disclosure-button button {
+  background: none;
+}
+
+.scrim .close image,
+.scrim .minimize image,
+.scrim .maximize image {
+  background: image(@osd_bg_color);
+  box-shadow: 0 2px 6px 2px rgba(0,0,0, 0.15),
+              0 1px 2px 0   rgba(0,0,0, 0.3);
+  color: @osd_fg_color;
+}
+.scrim .close:hover image,
+.scrim .minimize:hover image,
+.scrim .maximize:hover image {
+  background: linear-gradient(0deg, alpha(@accent_bg_color, 0.05), alpha(@accent_bg_color, 0.05)), image(@osd_bg_color);
+}
+.scrim .close:active image,
+.scrim .minimize:active image,
+.scrim .maximize:active image {
+  background: image(@osd_accent_color);
+  color: @osd_bg_color;
+}
+
+.viewer-bar {
+  background: none;
+}
+
+.viewer-bar button {
+  background: image(@osd_bg_color);
+  box-shadow: 0 2px 6px 2px rgba(0,0,0, 0.15),
+              0 1px 2px 0   rgba(0,0,0, 0.3);
+  padding: 9px;
+  min-width: 24px;
+  min-height: 24px;
+  color: @osd_fg_color;
+}
+
+.viewer-bar button:hover {
+  background: linear-gradient(0deg, alpha(@accent_bg_color, 0.08), alpha(@accent_bg_color, 0.08)), image(@osd_bg_color);
+}
+
+.viewer-bar button:active {
+  background: image(@osd_accent_color);
+  color: @osd_bg_color;
+}
+
+.props-view {
+  background: @osd_bg_color;
+  box-shadow: -2px 0 6px 2px rgba(0,0,0, 0.15),
+              -1px 0 2px 0   rgba(0,0,0, 0.3);
+}
+
+.props-view .mini-content-block {
+  background: shade(@osd_bg_color, 1.2);
+  color: @osd_fg_color;
+}
+.props-view .content-list row:first-child .mini-content-block {
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+
+}
+.props-view .content-list row .mini-content-block {
+  border-radius: 8px;
+}
+.props-view .content-list row:last-child .mini-content-block {
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+.props-view .mini-content-block button {
+  background: image(@osd_bg_color);
+  color: @osd_fg_color;
+}
+
+.props-view .mini-content-block button:hover {
+  background: linear-gradient(0deg, alpha(@accent_bg_color, 0.08), alpha(@accent_bg_color, 0.08)), image(@osd_bg_color);
+}
+
+.props-view .mini-content-block button:active {
+  background: image(@osd_accent_color);
+  color: @osd_bg_color;
+}
+
+.props-scrim .disclosure-button {
+  background: shade(@osd_bg_color, 1.2);
+  color: @osd_fg_color;
+}
+.props-scrim .disclosure-button:hover {
+  background: linear-gradient(0deg, alpha(@accent_bg_color, 0.05), alpha(@accent_bg_color, 0.05)), image(@osd_bg_color);
+}
+.props-scrim .disclosure-button:active,
+.props-scrim .disclosure-button:checked,
+.props-scrim .disclosure-button:active:checked {
+  background: image(@osd_accent_color);
+  color: @osd_bg_color;
+}
+.props-scrim .disclosure-button button:active,
+.props-scrim .disclosure-button button:checked,
+.props-scrim .disclosure-button button:active:checked {
+  background: image(@osd_accent_color);
+  color: @osd_bg_color;
+}
+.props-scrim .disclosure-button button {
+  background: none;
+}
+
+.props-scrim .close image,
+.props-scrim .minimize image,
+.props-scrim .maximize image {
+  background: shade(@osd_bg_color, 1.2);
+  color: @osd_fg_color;
+}
+.props-scrim .close:hover image,
+.props-scrim .minimize:hover image,
+.props-scrim .maximize:hover image {
+  background: linear-gradient(0deg, alpha(@accent_bg_color, 0.05), alpha(@accent_bg_color, 0.05)), image(@osd_bg_color);
+}
+.props-scrim .close:active image,
+.props-scrim .minimize:active image,
+.props-scrim .maximize:active image {
+  background: image(@osd_accent_color);
+  color: @osd_bg_color;
 }

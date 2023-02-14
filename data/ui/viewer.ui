@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-    <template class="ModiViewer" parent="HeViewMono">
+    <template class="ModiViewer" parent="HeBin">
         <property name="vexpand">1</property>
-        <property name="has-margins">0</property>
-        <property name="margin-top">45</property>
         <child>
             <object class="GtkWindowHandle">
                 <property name="hexpand">1</property>
@@ -27,19 +25,124 @@
                             <object class="GtkStackPage">
                                 <property name="name">canvas</property>
                                 <property name="child">
-                                    <object class="HeOverlayButton" id="overlay_button">
-                                        <property name="icon">zoom-in-symbolic</property>
-                                        <property name="secondary-icon">zoom-out-symbolic</property>
-                                        <property name="hexpand">1</property>
-                                        <property name="vexpand">1</property>
+                                    <object class="GtkBox">
                                         <child>
-                                            <object class="GtkScrolledWindow" id="sw">
-                                                <property name="halign">center</property>
-                                                <property name="valign">center</property>
-                                                <property name="propagate_natural_height">1</property>
-                                                <property name="propagate_natural_width">1</property>
+                                            <object class="GtkOverlay" id="overlay">
+                                                <property name="hexpand">1</property>
+                                                <property name="vexpand">1</property>
+                                                <child>
+                                                    <object class="GtkScrolledWindow" id="sw">
+                                                        <property name="propagate_natural_height">1</property>
+                                                        <property name="propagate_natural_width">1</property>
+                                                    </object>
+                                                </child>
+                                                <child type="overlay">
+                                                    <object class="HeBottomBar">
+                                                        <property name="valign">end</property>
+                                                        <style>
+                                                            <class name="viewer-bar" />
+                                                        </style>
+                                                        <!-- Uncomment these when making Modi a multi-image viewer. -->
+                                                        <!-- <child type="left">
+                                                            <object class="HeIconicButton" id="back">
+                                                                <property name="icon">go-previous-symbolic</property>
+                                                                <property name="tooltip-text" translatable="true">Previous Image</property>
+                                                            </object>
+                                                        </child>
+                                                        <child type="left">
+                                                            <object class="HeIconicButton" id="forward">
+                                                                <property name="icon">go-next-symbolic</property>
+                                                                <property name="tooltip-text" translatable="true">Next Image</property>
+                                                            </object>
+                                                        </child>
+                                                        <child type="right">-->
+                                                        <child type="left">
+                                                            <object class="HeIconicButton" id="fullscreen">
+                                                                <property name="icon">view-fullscreen-symbolic</property>
+                                                                <property name="tooltip-text" translatable="true">Go Fullscreen</property>
+                                                            </object>
+                                                        </child>
+                                                        <child type="left">
+                                                            <object class="HeIconicButton" id="restore">
+                                                                <property name="icon">view-restore-symbolic</property>
+                                                                <property name="visible">0</property>
+                                                                <property name="tooltip-text" translatable="true">Unfullscreen</property>
+                                                            </object>
+                                                        </child>
+                                                        <child type="right">
+                                                            <object class="HeIconicButton" id="zoomin">
+                                                                <property name="icon">zoom-in-symbolic</property>
+                                                                <property name="tooltip-text" translatable="true">Zoom In</property>
+                                                            </object>
+                                                        </child>
+                                                        <child type="right">
+                                                            <object class="HeIconicButton" id="zoomout">
+                                                                <property name="icon">zoom-out-symbolic</property>
+                                                                <property name="tooltip-text" translatable="true">Zoom Out</property>
+                                                            </object>
+                                                        </child>
+                                                    </object>
+                                                </child>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkRevealer" id="md_pane">
+                                                <property name="width-request">250</property>
+                                                <property name="reveal-child">0</property>
+                                                <property name="visible">0</property>
+                                                <property name="transition-type">crossfade</property>
+                                                <child>
+                                                    <object class="GtkBox">
+                                                        <property name="orientation">vertical</property>
+                                                        <property name="margin-start">12</property>
+                                                        <property name="margin-end">12</property>
+                                                        <child>
+                                                            <object class="HeContentList">
+                                                                <property name="margin-top">118</property>
+                                                                <child>
+                                                                    <object class="HeMiniContentBlock" id="folder_mcb">
+                                                                        <property name="title" translatable="true">Folder</property>
+                                                                        <child>
+                                                                            <object class="HeDisclosureButton" id="open_file_button">
+                                                                                <property name="icon">document-open-symbolic</property>
+                                                                            </object>
+                                                                        </child>
+                                                                    </object>
+                                                                </child>
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="HeContentList">
+                                                                <child>
+                                                                    <object class="HeMiniContentBlock" id="imgsize_mcb">
+                                                                        <property name="title" translatable="true">Image Size</property>
+                                                                        
+                                                                    </object>
+                                                                </child>
+                                                                <child>
+                                                                    <object class="HeMiniContentBlock" id="filetype_mcb">
+                                                                        <property name="title" translatable="true">File Type</property>
+                                                                        
+                                                                    </object>
+                                                                </child>
+                                                                <child>
+                                                                    <object class="HeMiniContentBlock" id="filesize_mcb">
+                                                                        <property name="title" translatable="true">File Size</property>
+                                                                        
+                                                                    </object>
+                                                                </child>
+                                                                <child>
+                                                                    <object class="HeMiniContentBlock" id="createdon_mcb">
+                                                                        <property name="title" translatable="true">Created On</property>
+                                                                        
+                                                                    </object>
+                                                                </child>
+                                                            </object>
+                                                        </child>
+                                                    </object>
+                                                </child>
                                                 <style>
-                                                    <class name="viewer" />
+                                                    <class name="props-view"/>
                                                 </style>
                                             </object>
                                         </child>

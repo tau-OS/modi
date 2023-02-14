@@ -10,6 +10,7 @@
                             <object class="HeAppBar" id="main_bar">
                                 <property name="show-back">0</property>
                                 <property name="valign">start</property>
+                                <property name="decoration-layout">:close</property>
                                 <child>
                                     <object class="GtkMenuButton">
                                         <property name="icon-name">open-menu-symbolic</property>
@@ -17,10 +18,11 @@
                                     </object>
                                 </child>
                                 <child>
-                                    <object class="GtkButton" id="open_button">
-                                        <property name="icon-name">document-open-symbolic</property>
-                                        <property name="tooltip_text" translatable="yes">Open Picture…</property>
-                                        <signal name="clicked" handler="open_file" />
+                                    <object class="GtkToggleButton" id="props_button">
+                                        <property name="icon-name">document-properties-symbolic</property>
+                                        <property name="tooltip-text" translatable="true">Image Properties</property>
+                                        <property name="visible">0</property>
+                                        <signal name="clicked" handler="on_metadata_requested"/>
                                     </object>
                                 </child>
                             </object>
