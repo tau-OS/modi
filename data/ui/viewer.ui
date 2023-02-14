@@ -105,6 +105,7 @@
                                                                         <child>
                                                                             <object class="HeDisclosureButton" id="open_file_button">
                                                                                 <property name="icon">document-open-symbolic</property>
+                                                                                <property name="tooltip-text" translatable="true">Open Image</property>
                                                                             </object>
                                                                         </child>
                                                                     </object>
