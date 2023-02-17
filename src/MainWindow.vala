@@ -94,7 +94,7 @@ public class Modi.MainWindow : He.ApplicationWindow {
 
 		editor.folder_mcb.subtitle = file.get_path ().replace (Environment.get_home_dir (), "~")
 													 .replace ("/" + file.get_basename (), "");
-		editor.filesize_mcb.subtitle = (info.get_size () / 1048576).to_string ("%d MB");
+		editor.filesize_mcb.subtitle = info.get_size () >= 1048576 ? (info.get_size () / 1048576).to_string ("%d MB") : (info.get_size ()).to_string ("%d B");
 		editor.filetype_mcb.subtitle = info.get_content_type ().to_string ().replace("image/", "").up ();
 		editor.createdon_mcb.subtitle = info.get_creation_date_time ().format ("%x %H∶%M");
 

@@ -25,7 +25,8 @@
                             <object class="GtkStackPage">
                                 <property name="name">canvas</property>
                                 <property name="child">
-                                    <object class="GtkBox">
+                                    <object class="BisLapel">
+                                        <property name="lapel-position">end</property>
                                         <child>
                                             <object class="GtkOverlay" id="overlay">
                                                 <property name="hexpand">1</property>
@@ -85,7 +86,7 @@
                                                 </child>
                                             </object>
                                         </child>
-                                        <child>
+                                        <child type="lapel">
                                             <object class="GtkRevealer" id="md_pane">
                                                 <property name="width-request">250</property>
                                                 <property name="reveal-child">0</property>

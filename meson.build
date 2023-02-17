@@ -47,7 +47,6 @@ sources = files(
     'src/Viewer.vala',
 )
 
-libbismuth_dep = meson.get_compiler('c').find_library('libbismuth', required: false)
 executable(
     meson.project_name(),
     asresources,
@@ -58,7 +57,7 @@ executable(
         dependency('json-glib-1.0', version: '>=1.4.4'),
         libgtk_dep,
         libhelium_dep,
-        libbismuth_dep,
+        dependency('libbismuth-1', fallback: [ 'libbismuth', 'libbismuth_dep' ], version: '>=1.0.0'),
         meson.get_compiler('c').find_library('m', required: true)
     ],
     vala_args: [meson.project_source_root() + '/src/Config.vapi'],

@@ -21,6 +21,8 @@ namespace Modi {
 			resource_base_path = "/com/fyralabs/Modi";
 			setup_actions ();
 
+			Bis.init ();
+
 			typeof (Viewer).ensure ();
 			typeof (PictureFile).ensure ();
 			base.startup ();
