@@ -13,7 +13,7 @@ namespace Modi {
 			this.flags = flags;
 		}
 
-		protected override void startup () {
+		public override void startup () {
 			Gdk.RGBA accent_color = { 0 };
 			accent_color.parse("#E0A101");
 			default_accent_color = He.Color.from_gdk_rgba(accent_color);
@@ -28,7 +28,7 @@ namespace Modi {
 			base.startup ();
 		}
 
-		protected override void activate () {
+		public override void activate () {
 			var window = get_last_window ();
 			if (window == null) {
 				window = new MainWindow (this);
@@ -51,7 +51,7 @@ namespace Modi {
 			}
 		}
 
-		protected void setup_actions () {
+		public void setup_actions () {
 			var about_action = new SimpleAction ("about", null);
 			about_action.activate.connect (v => {
 				show_about_dialog ();
@@ -60,7 +60,7 @@ namespace Modi {
 			add_action (about_action);
 		}
 
-		protected void show_about_dialog () {
+		public void show_about_dialog () {
 			var about = new He.AboutWindow (
 				get_last_window (),
 				"Modi" + Config.NAME_SUFFIX,
