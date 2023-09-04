@@ -79,6 +79,8 @@
 
 .viewer-bar {
   background: none;
+  box-shadow: none;
+  margin: 0 0 12px 0;
 }
 
 .viewer-bar button {
