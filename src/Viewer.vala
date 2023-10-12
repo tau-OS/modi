@@ -53,7 +53,7 @@ public class Modi.Viewer : He.Bin {
 		canvas.notify["scale"].connect (() => {
 			if (canvas.scale == 0.25) {
 				zoomout.sensitive = false;
-			} else if (canvas.scale == 0.75) {
+			} else if (canvas.scale == 2.0) {
 				zoomin.sensitive = false;
 			} else {
 				zoomout.sensitive = true;
@@ -96,6 +96,8 @@ public class Modi.Viewer : He.Bin {
 
 		stack.visible_child_name = is_empty ? "empty" : "canvas";
 
+        window.set_default_size (canvas.w, canvas.h);
+
 		if (is_empty)
 			this.remove_css_class ("editor-bg");
 		else
@@ -107,7 +109,7 @@ public class Modi.Viewer : He.Bin {
 	}
 
 	public void zoom_out () {
-		if (canvas.scale > 0.0) {
+		if (canvas.scale >= 0.0) {
 			canvas.scale -= float.parse("0.25");
 		} else {
 			canvas.scale = float.parse("0.25");

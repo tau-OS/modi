@@ -33,14 +33,14 @@ public class Modi.MainWindow : He.ApplicationWindow {
 	public class MainWindow (He.Application app) {
 		Object (
 			application: app,
-			default_width: 800,
-			default_height: 600,
 			width_request: 360,
-			height_request: 360
+			height_request: 280
 		);
 		
 		present ();
 		on_project_changed ();
+
+        set_default_size (800, 600);
 	}
 
 	void on_project_changed () {
