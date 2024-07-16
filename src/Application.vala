@@ -17,6 +17,7 @@ namespace Modi {
 			Gdk.RGBA accent_color = { 0 };
 			accent_color.parse("#E0A101");
 			default_accent_color = He.Color.from_gdk_rgba(accent_color);
+			scheme_factory = new He.MonochromaticScheme ();
 
 			resource_base_path = "/com/fyralabs/Modi";
 			setup_actions ();
