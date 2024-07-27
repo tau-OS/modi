@@ -10,13 +10,13 @@
                             <object class="HeAppBar" id="main_bar">
                                 <property name="show-back">0</property>
                                 <property name="valign">start</property>
-                                <child>
+                                <child type="titlebar-menu">
                                     <object class="GtkMenuButton">
                                         <property name="icon-name">open-menu-symbolic</property>
                                         <property name="menu_model">menu</property>
                                     </object>
                                 </child>
-                                <child>
+                                <child type="titlebar-toggle">
                                     <object class="GtkToggleButton" id="props_button">
                                         <property name="icon-name">document-properties-symbolic</property>
                                         <property name="tooltip-text" translatable="true">Image Properties</property>
