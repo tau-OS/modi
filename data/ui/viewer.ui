@@ -60,12 +60,14 @@
                                                         <child type="left">
                                                             <object class="HeIconicButton" id="fullscreen">
                                                                 <property name="icon">view-fullscreen-symbolic</property>
+                                                                <property name="valign">center</property>
                                                                 <property name="tooltip-text" translatable="true">Go Fullscreen</property>
                                                             </object>
                                                         </child>
                                                         <child type="left">
                                                             <object class="HeIconicButton" id="restore">
                                                                 <property name="icon">view-restore-symbolic</property>
+                                                                <property name="valign">center</property>
                                                                 <property name="visible">0</property>
                                                                 <property name="tooltip-text" translatable="true">Unfullscreen</property>
                                                             </object>
@@ -73,12 +75,14 @@
                                                         <child type="right">
                                                             <object class="HeIconicButton" id="zoomin">
                                                                 <property name="icon">zoom-in-symbolic</property>
+                                                                <property name="valign">center</property>
                                                                 <property name="tooltip-text" translatable="true">Zoom In</property>
                                                             </object>
                                                         </child>
                                                         <child type="right">
                                                             <object class="HeIconicButton" id="zoomout">
                                                                 <property name="icon">zoom-out-symbolic</property>
+                                                                <property name="valign">center</property>
                                                                 <property name="tooltip-text" translatable="true">Zoom Out</property>
                                                             </object>
                                                         </child>
