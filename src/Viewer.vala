@@ -11,19 +11,19 @@ public class Modi.Viewer : He.Bin {
 	[GtkChild]
 	new unowned Gtk.Stack stack;
 	[GtkChild]
-	unowned He.IconicButton zoomout;
+	unowned He.Button zoomout;
 	[GtkChild]
-	unowned He.IconicButton zoomin;
+	unowned He.Button zoomin;
 	[GtkChild]
-	unowned He.IconicButton fullscreen;
+	unowned He.Button fullscreen;
 	[GtkChild]
-	unowned He.IconicButton restore;
+	unowned He.Button restore;
 	[GtkChild]
 	unowned Gtk.ScrolledWindow sw;
 	[GtkChild]
 	unowned He.EmptyPage empty_page;
 	[GtkChild]
-	unowned He.DisclosureButton open_file_button;
+	unowned He.Button open_file_button;
 
 	[GtkChild]
 	public unowned He.MiniContentBlock folder_mcb;
