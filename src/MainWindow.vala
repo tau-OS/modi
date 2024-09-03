@@ -86,7 +86,6 @@ public class Modi.MainWindow : He.ApplicationWindow {
 		new PictureFile (file).load (this);
 		main_bar.add_css_class ("scrim");
 		this.add_css_class ("editor-bg");
-		main_bar.viewtitle_label = file.get_basename ();
 
 		props_button.visible = true;
 
