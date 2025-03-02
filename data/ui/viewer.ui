@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <interface>
     <template class="ModiViewer" parent="HeBin">
         <property name="vexpand">1</property>
@@ -13,10 +13,20 @@
                                 <property name="name">empty</property>
                                 <property name="child">
                                     <object class="HeEmptyPage" id="empty_page">
-                                        <property name="title" translatable="yes">No Open Picture</property>
-                                        <property name="icon">folder-pictures-symbolic</property>
-                                        <property name="description" translatable="yes">Open a picture to start viewing it.</property>
-                                        <property name="button">Open Picture</property>
+                                        <property
+                                            name="title"
+                                            translatable="yes"
+                                        >No Open Picture</property>
+                                        <property
+                                            name="icon"
+                                        >folder-pictures-symbolic</property>
+                                        <property
+                                            name="description"
+                                            translatable="yes"
+                                        >Open a picture to start viewing it.</property>
+                                        <property
+                                            name="button"
+                                        >Open Picture</property>
                                     </object>
                                 </property>
                             </object>
@@ -26,70 +36,158 @@
                                 <property name="name">canvas</property>
                                 <property name="child">
                                     <object class="BisLapel">
-                                        <property name="lapel-position">end</property>
+                                        <property
+                                            name="lapel-position"
+                                        >end</property>
                                         <child>
-                                            <object class="GtkOverlay" id="overlay">
-                                                <property name="hexpand">1</property>
-                                                <property name="vexpand">1</property>
+                                            <object
+                                                class="GtkOverlay"
+                                                id="overlay"
+                                            >
+                                                <property
+                                                    name="hexpand"
+                                                >1</property>
+                                                <property
+                                                    name="vexpand"
+                                                >1</property>
                                                 <child>
-                                                    <object class="GtkScrolledWindow" id="sw">
-                                                        <property name="propagate_natural_height">1</property>
-                                                        <property name="propagate_natural_width">1</property>
+                                                    <object
+                                                        class="GtkScrolledWindow"
+                                                        id="sw"
+                                                    >
+                                                        <property
+                                                            name="propagate_natural_height"
+                                                        >1</property>
+                                                        <property
+                                                            name="propagate_natural_width"
+                                                        >1</property>
                                                     </object>
                                                 </child>
                                                 <child type="overlay">
                                                     <object class="HeBottomBar">
-                                                        <property name="valign">end</property>
+                                                        <property
+                                                            name="valign"
+                                                        >end</property>
                                                         <style>
-                                                            <class name="viewer-bar" />
+                                                            <class
+                                                                name="viewer-bar"
+                                                            />
                                                         </style>
-                                                        <!-- Uncomment these when making Modi a multi-image viewer. -->
-                                                        <!-- <child type="left">
-                                                            <object class="HeButton" id="back">
-                                                                <property name="is-iconic">true</property>
-                                                                <property name="icon">go-previous-symbolic</property>
-                                                                <property name="tooltip-text" translatable="true">Previous Image</property>
+                                                        <child type="left">
+                                                            <object
+                                                                class="HeButton"
+                                                                id="back"
+                                                            >
+                                                                <property
+                                                                    name="is-iconic"
+                                                                >true</property>
+                                                                <property
+                                                                    name="icon"
+                                                                >go-previous-symbolic</property>
+                                                                <property
+                                                                    name="tooltip-text"
+                                                                    translatable="true"
+                                                                >Previous Image</property>
                                                             </object>
                                                         </child>
                                                         <child type="left">
-                                                            <object class="HeButton" id="forward">
-                                                                <property name="is-iconic">true</property>
-                                                                <property name="icon">go-next-symbolic</property>
-                                                                <property name="tooltip-text" translatable="true">Next Image</property>
+                                                            <object
+                                                                class="HeButton"
+                                                                id="forward"
+                                                            >
+                                                                <property
+                                                                    name="is-iconic"
+                                                                >true</property>
+                                                                <property
+                                                                    name="icon"
+                                                                >go-next-symbolic</property>
+                                                                <property
+                                                                    name="tooltip-text"
+                                                                    translatable="true"
+                                                                >Next Image</property>
                                                             </object>
                                                         </child>
-                                                        <child type="right">-->
                                                         <child type="left">
-                                                            <object class="HeButton" id="fullscreen">
-                                                                <property name="is-iconic">true</property>
-                                                                <property name="icon">view-fullscreen-symbolic</property>
-                                                                <property name="valign">center</property>
-                                                                <property name="tooltip-text" translatable="true">Go Fullscreen</property>
+                                                            <object
+                                                                class="HeButton"
+                                                                id="fullscreen"
+                                                            >
+                                                                <property
+                                                                    name="is-iconic"
+                                                                >true</property>
+                                                                <property
+                                                                    name="icon"
+                                                                >view-fullscreen-symbolic</property>
+                                                                <property
+                                                                    name="valign"
+                                                                >center</property>
+                                                                <property
+                                                                    name="tooltip-text"
+                                                                    translatable="true"
+                                                                >Go Fullscreen</property>
                                                             </object>
                                                         </child>
                                                         <child type="left">
-                                                            <object class="HeButton" id="restore">
-                                                                <property name="is-iconic">true</property>
-                                                                <property name="icon">view-restore-symbolic</property>
-                                                                <property name="valign">center</property>
-                                                                <property name="visible">0</property>
-                                                                <property name="tooltip-text" translatable="true">Unfullscreen</property>
+                                                            <object
+                                                                class="HeButton"
+                                                                id="restore"
+                                                            >
+                                                                <property
+                                                                    name="is-iconic"
+                                                                >true</property>
+                                                                <property
+                                                                    name="icon"
+                                                                >view-restore-symbolic</property>
+                                                                <property
+                                                                    name="valign"
+                                                                >center</property>
+                                                                <property
+                                                                    name="visible"
+                                                                >0</property>
+                                                                <property
+                                                                    name="tooltip-text"
+                                                                    translatable="true"
+                                                                >Unfullscreen</property>
                                                             </object>
                                                         </child>
                                                         <child type="right">
-                                                            <object class="HeButton" id="zoomin">
-                                                                <property name="is-iconic">true</property>
-                                                                <property name="icon">zoom-in-symbolic</property>
-                                                                <property name="valign">center</property>
-                                                                <property name="tooltip-text" translatable="true">Zoom In</property>
+                                                            <object
+                                                                class="HeButton"
+                                                                id="zoomin"
+                                                            >
+                                                                <property
+                                                                    name="is-iconic"
+                                                                >true</property>
+                                                                <property
+                                                                    name="icon"
+                                                                >zoom-in-symbolic</property>
+                                                                <property
+                                                                    name="valign"
+                                                                >center</property>
+                                                                <property
+                                                                    name="tooltip-text"
+                                                                    translatable="true"
+                                                                >Zoom In</property>
                                                             </object>
                                                         </child>
                                                         <child type="right">
-                                                            <object class="HeButton" id="zoomout">
-                                                                <property name="is-iconic">true</property>
-                                                                <property name="icon">zoom-out-symbolic</property>
-                                                                <property name="valign">center</property>
-                                                                <property name="tooltip-text" translatable="true">Zoom Out</property>
+                                                            <object
+                                                                class="HeButton"
+                                                                id="zoomout"
+                                                            >
+                                                                <property
+                                                                    name="is-iconic"
+                                                                >true</property>
+                                                                <property
+                                                                    name="icon"
+                                                                >zoom-out-symbolic</property>
+                                                                <property
+                                                                    name="valign"
+                                                                >center</property>
+                                                                <property
+                                                                    name="tooltip-text"
+                                                                    translatable="true"
+                                                                >Zoom Out</property>
                                                             </object>
                                                         </child>
                                                     </object>
@@ -97,27 +195,64 @@
                                             </object>
                                         </child>
                                         <child type="lapel">
-                                            <object class="GtkRevealer" id="md_pane">
-                                                <property name="width-request">250</property>
-                                                <property name="reveal-child">0</property>
-                                                <property name="visible">0</property>
-                                                <property name="transition-type">crossfade</property>
+                                            <object
+                                                class="GtkRevealer"
+                                                id="md_pane"
+                                            >
+                                                <property
+                                                    name="width-request"
+                                                >250</property>
+                                                <property
+                                                    name="reveal-child"
+                                                >0</property>
+                                                <property
+                                                    name="visible"
+                                                >0</property>
+                                                <property
+                                                    name="transition-type"
+                                                >crossfade</property>
                                                 <child>
                                                     <object class="GtkBox">
-                                                        <property name="orientation">vertical</property>
-                                                        <property name="margin-start">12</property>
-                                                        <property name="margin-end">12</property>
+                                                        <property
+                                                            name="orientation"
+                                                        >vertical</property>
+                                                        <property
+                                                            name="margin-start"
+                                                        >12</property>
+                                                        <property
+                                                            name="margin-end"
+                                                        >12</property>
                                                         <child>
-                                                            <object class="HeContentList">
-                                                                <property name="margin-top">118</property>
+                                                            <object
+                                                                class="HeContentList"
+                                                            >
+                                                                <property
+                                                                    name="margin-top"
+                                                                >118</property>
                                                                 <child>
-                                                                    <object class="HeMiniContentBlock" id="folder_mcb">
-                                                                        <property name="title" translatable="true">Folder</property>
+                                                                    <object
+                                                                        class="HeMiniContentBlock"
+                                                                        id="folder_mcb"
+                                                                    >
+                                                                        <property
+                                                                            name="title"
+                                                                            translatable="true"
+                                                                        >Folder</property>
                                                                         <child>
-                                                                            <object class="HeButton" id="open_file_button">
-                                                                                <property name="is-disclosure">true</property>
-                                                                                <property name="icon">document-open-symbolic</property>
-                                                                                <property name="tooltip-text" translatable="true">Open Image</property>
+                                                                            <object
+                                                                                class="HeButton"
+                                                                                id="open_file_button"
+                                                                            >
+                                                                                <property
+                                                                                    name="is-disclosure"
+                                                                                >true</property>
+                                                                                <property
+                                                                                    name="icon"
+                                                                                >document-open-symbolic</property>
+                                                                                <property
+                                                                                    name="tooltip-text"
+                                                                                    translatable="true"
+                                                                                >Open Image</property>
                                                                             </object>
                                                                         </child>
                                                                     </object>
@@ -125,29 +260,55 @@
                                                             </object>
                                                         </child>
                                                         <child>
-                                                            <object class="HeContentList">
+                                                            <object
+                                                                class="HeContentList"
+                                                            >
                                                                 <child>
-                                                                    <object class="HeMiniContentBlock" id="imgsize_mcb">
-                                                                        <property name="title" translatable="true">Image Size</property>
-                                                                        
+                                                                    <object
+                                                                        class="HeMiniContentBlock"
+                                                                        id="imgsize_mcb"
+                                                                    >
+                                                                        <property
+                                                                            name="title"
+                                                                            translatable="true"
+                                                                        >Image Size</property>
+
                                                                     </object>
                                                                 </child>
                                                                 <child>
-                                                                    <object class="HeMiniContentBlock" id="filetype_mcb">
-                                                                        <property name="title" translatable="true">File Type</property>
-                                                                        
+                                                                    <object
+                                                                        class="HeMiniContentBlock"
+                                                                        id="filetype_mcb"
+                                                                    >
+                                                                        <property
+                                                                            name="title"
+                                                                            translatable="true"
+                                                                        >File Type</property>
+
                                                                     </object>
                                                                 </child>
                                                                 <child>
-                                                                    <object class="HeMiniContentBlock" id="filesize_mcb">
-                                                                        <property name="title" translatable="true">File Size</property>
-                                                                        
+                                                                    <object
+                                                                        class="HeMiniContentBlock"
+                                                                        id="filesize_mcb"
+                                                                    >
+                                                                        <property
+                                                                            name="title"
+                                                                            translatable="true"
+                                                                        >File Size</property>
+
                                                                     </object>
                                                                 </child>
                                                                 <child>
-                                                                    <object class="HeMiniContentBlock" id="createdon_mcb">
-                                                                        <property name="title" translatable="true">Created On</property>
-                                                                        
+                                                                    <object
+                                                                        class="HeMiniContentBlock"
+                                                                        id="createdon_mcb"
+                                                                    >
+                                                                        <property
+                                                                            name="title"
+                                                                            translatable="true"
+                                                                        >Created On</property>
+
                                                                     </object>
                                                                 </child>
                                                             </object>
@@ -155,7 +316,7 @@
                                                     </object>
                                                 </child>
                                                 <style>
-                                                    <class name="props-view"/>
+                                                    <class name="props-view" />
                                                 </style>
                                             </object>
                                         </child>
